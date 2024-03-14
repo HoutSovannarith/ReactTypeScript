@@ -52,10 +52,10 @@ function App() {
             method: "POST",
             body: JSON.stringify(dataForm),
             headers:{
-                "Content type": "application/json; charset=UTF-8"
+                "Content-Type": "application/json; charset=UTF-8"
             }
         }).then((res) => res.json()).then((data) => {
-            console.log(data)
+            setProduct([...products, data]);
         }).catch((err) => {
             console.log(err)
         });

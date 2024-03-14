@@ -65,19 +65,34 @@ export default function FormCreateProduct({getDataForm}:any) {
                 <div className="mb-2 block">
                     <Label htmlFor="title" value="Product Title"/>
                 </div>
-                <TextInput id="title" type="text" placeholder="Apple Vision Pro" required/>
+                <TextInput
+                    id="title"
+                    onChange={(e) => setTitle(e.target.value)}
+                    type="text"
+                    placeholder="Apple Vision Pro"
+                    required/>
             </div>
             <div>
                 <div className="mb-2 block">
                     <Label htmlFor="price" value="Product Price"/>
                 </div>
-                <TextInput id="price" type="number" required/>
+                <TextInput
+                    id="price"
+                    onChange={(e) => setPrice(parseFloat(e.target.value))}
+                    type="number"
+                    required/>
             </div>
             <div>
                 <div className="mb-2 block">
                     <Label htmlFor="description" value="Product description"/>
                 </div>
-                <Textarea id="description"/>
+                <Textarea
+                    id="description"
+                    name="description"
+                    onChange={(e) => setDescription(e.target.value)}
+                    required
+                />
+
             </div>
         </form>
     );
